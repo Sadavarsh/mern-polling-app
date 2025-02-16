@@ -20,7 +20,7 @@ const Poll = () => {
 
   const votePoll = async (pollId, optionIndex) => {
     try {
-      await axios.post("http://localhost:8000/api/polls/vote", { pollId, optionIndex });
+      await axios.post(`${import.meta.env.VITE_REACT_APP_BASE_URL}/api/polls/vote`, { pollId, optionIndex });
       fetchPolls();
     } catch (error) {
       console.error("Error voting:", error);
