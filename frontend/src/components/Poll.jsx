@@ -11,7 +11,7 @@ const Poll = () => {
 
   const fetchPolls = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/polls");
+      const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BASE_URL}/api/polls`);
       setPolls(response.data);
     } catch (error) {
       console.error("Error fetching polls:", error);
