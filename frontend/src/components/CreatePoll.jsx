@@ -26,7 +26,7 @@ export default function CreatePoll({ onPollCreated }) {
     }
 
     try {
-      await axios.post("http://localhost:8000/api/polls/create", { question, options });
+      await axios.post(`${import.meta.env.VITE_REACT_APP_BASE_URL}/api/polls/create`, { question, options });
       setQuestion("");
       setOptions([""]);
       onPollCreated();
